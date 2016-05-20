@@ -7,8 +7,8 @@ ENV ELIXIR_VERSION 1.2.3
 ENV HOME /root
 
 # Install Erlang/Elixir
-RUN echo 'http://dl-4.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
-    echo 'http://dl-4.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
+    echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     apk -U upgrade && \
     apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs \
                      erlang erlang-dev erlang-kernel erlang-hipe erlang-compiler \
