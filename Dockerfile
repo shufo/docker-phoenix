@@ -31,4 +31,6 @@ RUN mix local.hex --force && \
     mix local.rebar --force && \
     mix hex.info
 
+EXPOSE 4000
+
 CMD ["sh", "-c", "mix deps.get && mix phoenix.server"]
