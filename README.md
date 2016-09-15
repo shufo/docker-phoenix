@@ -3,7 +3,7 @@
 This repository contains a script for create [phoenix](http://www.phoenixframework.org/) server image.
 DockerHub repository is [here](https://hub.docker.com/r/shufo/phoenix/)
 
-These elixir versions can be used as a tag.
+You can use these tags as a version of elixir.
 
 - `1.3.2`, `latest`
 - `1.3.1`
