@@ -17,7 +17,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositori
                      erlang-inets erlang-mnesia erlang-odbc erlang-xmerl \
                      erlang-erl-interface erlang-parsetools erlang-eunit && \
     update-ca-certificates --fresh && \
-    npm install -g brunch && \
+    npm install -g brunch babel-brunch sass-brunch javascript-brunch css-brunch clean-css-brunch uglify-js-brunch && \
     wget https://github.com/elixir-lang/elixir/releases/download/v${ELIXIR_VERSION}/Precompiled.zip && \
     mkdir -p /opt/elixir-${ELIXIR_VERSION}/ && \
     unzip Precompiled.zip -d /opt/elixir-${ELIXIR_VERSION}/ && \
