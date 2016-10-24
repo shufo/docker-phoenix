@@ -10,7 +10,7 @@ ENV HOME /root
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
     echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     apk -U upgrade && \
-    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs mysql-client \
+    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs mysql-client imagemagick \
                      erlang erlang-dev erlang-kernel erlang-hipe erlang-compiler \
                      erlang-stdlib erlang-erts erlang-tools erlang-syntax-tools erlang-sasl \
                      erlang-crypto erlang-public-key erlang-ssl erlang-ssh erlang-asn1 erlang-inets \
