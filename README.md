@@ -5,7 +5,8 @@ DockerHub repository is [here](https://hub.docker.com/r/shufo/phoenix/)
 
 You can use these tags as a version of elixir.
 
-- `1.4.0-rc.0`, `latest`
+- `1.4.0-rc.1`, `latest`
+- `1.4.0-rc.0`
 - `1.3.4`
 - `1.3.3`
 - `1.3.2`
