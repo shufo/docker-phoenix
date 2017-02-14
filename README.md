@@ -28,3 +28,25 @@ Run below command in your phoenix project directory.
 ```
 docker run -d -p 4000:4000 -v $(pwd):/app -w /app shufo/phoenix
 ```
+
+### docker-compose
+
+
+```
+app:
+  image: shufo/phoenix:1.4.0-development
+  container_name: myproject_app
+  hostname: app
+  expose:
+    - 4000
+  ports:
+    - "4000:4000"
+    - "4001:4001"
+  working_dir: /code
+  volumes:
+    - ".:/code"
+  environment:
+    - "PORT=4000"
+  links:
+    - mysql
+```
