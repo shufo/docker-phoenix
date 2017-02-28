@@ -13,7 +13,7 @@ RUN apk -U upgrade && \
                      erlang-stdlib erlang-erts erlang-tools erlang-syntax-tools erlang-sasl \
                      erlang-crypto erlang-public-key erlang-ssl erlang-ssh erlang-asn1 erlang-inets \
                      erlang-inets erlang-mnesia erlang-odbc erlang-xmerl \
-                     erlang-erl-interface erlang-parsetools erlang-eunit && \
+                     erlang-erl-interface erlang-parsetools erlang-eunit \
                      inotify-tools && \
     update-ca-certificates --fresh && \
     npm install -g yarn brunch babel-brunch sass-brunch javascript-brunch css-brunch clean-css-brunch uglify-js-brunch && \
