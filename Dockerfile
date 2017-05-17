@@ -13,8 +13,8 @@ RUN apk -U upgrade && \
                      erlang-stdlib erlang-erts erlang-tools erlang-syntax-tools erlang-sasl \
                      erlang-crypto erlang-public-key erlang-ssl erlang-ssh erlang-asn1 erlang-inets \
                      erlang-inets erlang-mnesia erlang-odbc erlang-xmerl \
-                     inotify-tools && \
                      erlang-erl-interface erlang-parsetools erlang-eunit erlang-runtime-tools \
+                     inotify-tools openssh && \
     update-ca-certificates --fresh && \
     npm install -g yarn brunch babel-brunch sass-brunch javascript-brunch css-brunch clean-css-brunch uglify-js-brunch && \
     wget https://github.com/elixir-lang/elixir/releases/download/v${ELIXIR_VERSION}/Precompiled.zip && \
@@ -22,6 +22,13 @@ RUN apk -U upgrade && \
     unzip Precompiled.zip -d /opt/elixir-${ELIXIR_VERSION}/ && \
     rm Precompiled.zip && \
     rm -rf /var/cache/apk/*
+
+# Add erlang-history
+RUN git clone -q https://github.com/ferd/erlang-history.git && \
+    cd erlang-history && \
+    make install && \
+    cd - && \
+    rm -fR erlang-history
 
 # Add local node module binaries to PATH
 ENV PATH $PATH:node_modules/.bin:/opt/elixir-${ELIXIR_VERSION}/bin
