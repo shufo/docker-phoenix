@@ -8,7 +8,7 @@ ENV HOME /root
 
 # Install Erlang/Elixir
 RUN apk -U upgrade && \
-    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs mysql-client imagemagick \
+    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs mysql-client imagemagick curl \
                      erlang erlang-dev erlang-kernel erlang-hipe erlang-compiler \
                      erlang-stdlib erlang-erts erlang-tools erlang-syntax-tools erlang-sasl \
                      erlang-crypto erlang-public-key erlang-ssl erlang-ssh erlang-asn1 erlang-inets \
