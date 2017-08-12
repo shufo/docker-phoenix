@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM erlang:20-alpine
 MAINTAINER shufo
 
 
@@ -8,12 +8,7 @@ ENV HOME /root
 
 # Install Erlang/Elixir
 RUN apk -U upgrade && \
-    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs mysql-client imagemagick curl bash \
-                     erlang erlang-dev erlang-kernel erlang-hipe erlang-compiler \
-                     erlang-stdlib erlang-erts erlang-tools erlang-syntax-tools erlang-sasl \
-                     erlang-crypto erlang-public-key erlang-ssl erlang-ssh erlang-asn1 erlang-inets \
-                     erlang-inets erlang-mnesia erlang-odbc erlang-xmerl \
-                     erlang-erl-interface erlang-parsetools erlang-eunit erlang-runtime-tools \
+    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs nodejs-npm mysql-client imagemagick curl bash \
                      inotify-tools openssh && \
     update-ca-certificates --fresh && \
     npm install -g yarn brunch babel-brunch sass-brunch javascript-brunch css-brunch clean-css-brunch uglify-js-brunch && \
