@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM erlang:20-alpine
 MAINTAINER shufo
 
 
@@ -10,12 +10,7 @@ ENV HOME /root
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
     echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
     apk -U upgrade && \
-    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs \
-                     erlang erlang-dev erlang-kernel erlang-hipe erlang-compiler \
-                     erlang-stdlib erlang-erts erlang-tools erlang-syntax-tools erlang-sasl \
-                     erlang-crypto erlang-public-key erlang-ssl erlang-ssh erlang-asn1 erlang-inets \
-                     erlang-inets erlang-mnesia erlang-odbc erlang-xmerl \
-                     erlang-erl-interface erlang-parsetools erlang-eunit && \
+    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl && \
     update-ca-certificates --fresh && \
     wget https://github.com/elixir-lang/elixir/releases/download/v${ELIXIR_VERSION}/Precompiled.zip && \
     mkdir -p /opt/elixir-${ELIXIR_VERSION}/ && \
