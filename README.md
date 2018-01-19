@@ -5,7 +5,9 @@ DockerHub repository is [here](https://hub.docker.com/r/shufo/phoenix/)
 
 You can use these tags as a version of elixir.
 
-- `1.5.2`, `latest`
+- `1.6.0`, `latest`
+- `1.6.0-development`
+- `1.5.2`
 - `1.5.2-development`
 - `1.5.1`
 - `1.5.1-development`
@@ -36,6 +38,7 @@ You can use these tags as a version of elixir.
 - `1.2.5`
 - `1.2.3`
 
+`development` tags are including node.js and utilities to automatically compile assets on development environment.
 
 ## Usage
 
