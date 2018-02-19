@@ -5,7 +5,9 @@ DockerHub repository is [here](https://hub.docker.com/r/shufo/phoenix/)
 
 You can use these tags as a version of elixir.
 
-- `1.6.0`, `latest`
+- `1.6.1`, `latest`
+- `1.6.1-development`
+- `1.6.0`
 - `1.6.0-development`
 - `1.5.2`
 - `1.5.2-development`
@@ -53,7 +55,7 @@ docker run -d -p 4000:4000 -v $(pwd):/app -w /app shufo/phoenix
 
 ```
 app:
-  image: shufo/phoenix:1.4.1-development
+  image: shufo/phoenix:1.6.1-development
   container_name: myproject_app
   hostname: app
   expose:
