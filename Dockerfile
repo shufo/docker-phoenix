@@ -11,8 +11,11 @@ RUN apk -U upgrade && \
     apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl nodejs nodejs-npm mysql-client imagemagick curl bash \
                      inotify-tools openssh && \
     update-ca-certificates --fresh && \
-    npm install -g yarn brunch babel-brunch sass-brunch javascript-brunch css-brunch clean-css-brunch uglify-js-brunch && \
-    rm -rf /var/cache/apk/*
+    npm install -g yarn && \
+    yarn global add brunch babel-brunch sass-brunch javascript-brunch css-brunch clean-css-brunch uglify-js-brunch && \
+    rm -rf /var/cache/apk/* && \
+    npm cache clean --force && \
+    yarn cache clean
 
 # Add erlang-history
 RUN git clone -q https://github.com/ferd/erlang-history.git && \
