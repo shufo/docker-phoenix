@@ -13,7 +13,7 @@ RUN apk -U upgrade && \
     rm -rf /var/cache/apk/*
 
 # Add local node module binaries to PATH
-ENV PATH $PATH:node_modules/.bin:/opt/elixir-${ELIXIR_VERSION}/bin
+ENV PATH $PATH:node_modules/.bin:/usr/local/bin
 
 # Install Hex+Rebar
 RUN mix local.hex --force && \
