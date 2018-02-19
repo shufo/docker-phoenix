@@ -22,7 +22,7 @@ RUN git clone -q https://github.com/ferd/erlang-history.git && \
     rm -fR erlang-history
 
 # Add local node module binaries to PATH
-ENV PATH $PATH:node_modules/.bin:/root/.kiex/builds/elixir-git/bin
+ENV PATH $PATH:node_modules/.bin:/usr/local/bin
 
 # Install Hex+Rebar
 RUN mix local.hex --force && \
