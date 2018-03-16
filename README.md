@@ -68,6 +68,7 @@ app:
     - ".:/code"
   environment:
     - "PORT=4000"
+    - "ERL_AFLAGS=-kernel shell_history enabled"
   links:
     - mysql
 ```
