@@ -1,9 +1,9 @@
-FROM elixir:1.6.2-alpine
+FROM elixir:1.6.3-alpine
 MAINTAINER shufo
 
 
 ENV REFRESHED_AT 2018-06-21
-ENV ELIXIR_VERSION 1.6.2
+ENV ELIXIR_VERSION 1.6.3
 ENV HOME /root
 
 # Install Erlang/Elixir
