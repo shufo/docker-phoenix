@@ -4,26 +4,22 @@ FROM erlang:21-alpine
 ENV ELIXIR_VERSION="v1.6.6" \
 	LANG=C.UTF-8
 
-RUN set -xe \
-	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" \
-	&& ELIXIR_DOWNLOAD_SHA256="d6a84726a042407110d3b13b1ce8d9524b4a50df68174e79d89a9e42e30b410b" \
-	&& buildDeps=' \
-		ca-certificates \
-		curl \
-		unzip \
-	' \
-	&& apk add --no-cache --virtual .build-deps $buildDeps \
-	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL \
-	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-precompiled.zip" | sha256sum -c - \
-	&& unzip -d /usr/local elixir-precompiled.zip \
-	&& rm elixir-precompiled.zip \
-	&& apk del .build-deps
-
 # Install dependencies
 RUN apk -U upgrade && \
-    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl && \
+    apk --update --no-cache add ncurses-libs git make g++ wget python ca-certificates openssl curl && \
     update-ca-certificates --fresh && \
     rm -rf /var/cache/apk/*
+
+RUN set -xe \
+	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" \
+	&& ELIXIR_DOWNLOAD_SHA256="791f726f7e3bb05a4620beb6191f2d758332ea7a169861b03580a16022c49a75" \
+	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL \
+	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - \
+	&& mkdir -p /usr/local/src/elixir \
+	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz \
+	&& rm elixir-src.tar.gz \
+	&& cd /usr/local/src/elixir \
+	&& make install clean
 
 # Add local node module binaries to PATH
 ENV PATH $PATH:node_modules/.bin:/usr/local/bin
