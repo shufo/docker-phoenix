@@ -2,7 +2,7 @@ FROM erlang:21-alpine
 MAINTAINER shufo
 
 # elixir expects utf8.
-ENV ELIXIR_VERSION="v1.6.6" \
+ENV ELIXIR_VERSION="v1.7.0" \
 	LANG=C.UTF-8
 
 RUN set -xe \
