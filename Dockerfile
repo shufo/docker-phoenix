@@ -1,7 +1,7 @@
 FROM erlang:21-alpine
 
 # elixir expects utf8.
-ENV ELIXIR_VERSION="v1.7.4" \
+ENV ELIXIR_VERSION="v1.8.0" \
 	LANG=C.UTF-8
 
 # Install dependencies
@@ -12,7 +12,7 @@ RUN apk -U upgrade && \
 
 RUN set -xe \
 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" \
-	&& ELIXIR_DOWNLOAD_SHA256="c7c87983e03a1dcf20078141a22355e88dadb26b53d3f3f98b9a9268687f9e20" \
+	&& ELIXIR_DOWNLOAD_SHA256="fe896d8b2914f982d2e6fceeb585f59a8f92ad872653fc46c13df9ff86d69234" \
 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL \
 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - \
 	&& mkdir -p /usr/local/src/elixir \
