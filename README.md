@@ -79,7 +79,7 @@ docker run -d -p 4000:4000 -v $(pwd):/app -w /app shufo/phoenix
 
 ```
 app:
-  image: shufo/phoenix:1.6.1-development
+  image: shufo/phoenix:1.8.1-development
   container_name: myproject_app
   hostname: app
   expose:
